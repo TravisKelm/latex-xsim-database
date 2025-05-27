@@ -1,0 +1,52 @@
+# LaTeX intermediate files
+*.aux
+*.bbl
+*.blg
+*.brf
+*.fls
+*.fdb_latexmk
+*.log
+*.out
+*.toc
+*.synctex.gz
+*.nav
+*.snm
+*.vrb
+*.lof
+*.lot
+*.lol
+*.ilg
+*.idx
+*.ind
+*.ist
+*.glo
+*.glg
+*.gls
+*.acn
+*.acr
+*.alg
+*.xdy
+*.tdo
+*.run.xml
+
+# Output files
+*.pdf
+*.dvi
+*.ps
+
+# VS Code settings and workspace files
+.vscode/
+*.code-workspace
+
+# WinEdt backup and temp files
+*.bak
+*.~*
+*.tmp
+*.log.winedt
+
+# Mac OS
+.DS_Store
+
+# Windows
+Thumbs.db
+desktop.ini

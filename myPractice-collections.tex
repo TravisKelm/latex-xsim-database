@@ -1,0 +1,77 @@
+\documentclass{article}
+\usepackage{xsim}
+
+%%%%%%%%%%%%%%% MATH PACKAGES %%%%%%%%%%%%%%%
+\usepackage{amsmath}      % math papers (\text}
+%\usepackage{amssymb}      % COMPLETE set of AMSFonts (needed for \mathbb)
+%\usepackage{latexsym}     % to get the 11 symbols left out of latex2e
+%\usepackage{eufrak}       % Euler Fraktur package
+%\usepackage{euscript}     % Euler Script package
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\DeclareExerciseCollection[difficulty=easy]{easy}
+\DeclareExerciseCollection[difficulty=medium]{medium}
+\DeclareExerciseTagging{difficulty}
+
+% The following tells xsim to record info about exercises/solutions in auxiliary files
+% so I can do things like point totals, lists, and filtered selection later.
+\xsimsetup{collect}
+
+\begin{document}
+
+% DIRECTLY PRINTING AN EXERCISE
+\begin{exercise}[use,print]
+  This is an exercise that is ``outside'' of any collection.
+  The \texttt{[use,print]} options mean the exercise will be enumerated and printed no matter what other specifications are made.
+  
+  Just using the option \texttt{[use]} will result in the exercise being enumerated, but \textbf{not} printed.
+  (In other words, the quadratic problem below will be enumerated as \#2 even though the quadratic problem might be the first problem that actually gets printed.)
+   
+  Just using the option \texttt{[print]} will print the problem, but will not
+  enumerate it.
+\end{exercise}
+
+
+% THE FOLLOWING ARE THE EXERCISE DEFINITIONS
+% EACH EXERCISE IS GROUPED INTO A ``COLLECTION'' BASED UPON ``difficulty''
+% THE EXERCISES WILL NOT BE PRINTED UNTIL THEY ARE INVOKED
+
+%%% EASY,1
+\begin{exercise}[difficulty=easy,points=1]
+  State the quadratic formula.
+\end{exercise}
+\begin{solution}
+  \[ x=\frac{-b\pm\sqrt{b^2-4ac}}{2a} \]
+\end{solution}
+
+%%% MEDIUM,1
+\begin{exercise}[difficulty=medium,points=1]
+  State the distance formula.
+\end{exercise}
+\begin{solution}
+  \[ \text{distance }=\sqrt{(x-a)^2+(y-b)^2} \]
+\end{solution}
+
+
+%%% EASY,1
+\begin{exercise}[difficulty=easy,points=1]
+  State the limit definition of the derivative.
+\end{exercise}
+\begin{solution}
+  \[ f'(x)=\lim_{h\to 0}\frac{f(x+h)-f(x)}{h} \]
+\end{solution}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%% HERE IS WHERE WE DECLARE WHAT EXERCISES WE WANT PRINTED
+
+\section{Easy}
+\printcollection{easy}
+
+\section{Medium}
+\printcollection{medium}
+
+\printsolutions[difficulty=medium]
+
+\end{document} 

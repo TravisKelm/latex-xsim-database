@@ -9,6 +9,7 @@
 *.out
 *.toc
 *.synctex.gz
+*.synctex
 *.nav
 *.snm
 *.vrb
@@ -28,6 +29,7 @@
 *.xdy
 *.tdo
 *.run.xml
+*.xsim
 
 # Output files
 *.pdf

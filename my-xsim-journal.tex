@@ -1,0 +1,116 @@
+\documentclass{article}
+\usepackage[clear-aux,no-files]{xsim}
+% clear-aux reduces the probability of faulty exercises after document changes
+% no-files means that exercises and solutions will NOT be written to individual external files
+
+\usepackage{enumitem} % customized lists
+\usepackage{fmtcount} % commands that display the value of a LaTeX counter in a variety of formats (ordinal, text, hexadecimal, decimal, octal, binary etc)
+\usepackage{amssymb} % math stuff
+
+
+\newenvironment{myBlock}
+    {\begin{center}
+    \begin{tabular}{|p{0.9\textwidth}|}
+    \hline\\
+    }
+    {
+    \\\\\hline
+    \end{tabular}
+    \end{center}
+    }
+
+
+\begin{document}
+
+If you have this code:
+
+\begin{myBlock}
+\begin{verbatim}
+\begin{exercise}
+  This is a very basic question.
+\end{exercise}
+\begin{solution}
+  This is a very basic solution.
+\end{solution}
+\end{verbatim}
+\end{myBlock}
+
+
+Then you will get this output:
+
+\begin{myBlock}
+\begin{exercise}
+  This is the default \texttt{exercise} environment.
+\end{exercise}
+\begin{solution}
+  This is the default \texttt{solution} environment.
+\end{solution}
+\end{myBlock}
+
+
+Note that the solution is not printed.
+To print the solution you must use the \verb'print=true' option with the \verb'solution' environment:
+
+\begin{myBlock}
+\begin{verbatim}
+\begin{exercise}
+  This is a second default exercise.
+\end{exercise}
+\begin{solution}[print=true]
+  This is the default solution to the second exercise.
+  We are printing the solution this time.
+\end{solution}
+\end{verbatim}
+\end{myBlock}
+
+
+\begin{myBlock}
+\begin{exercise}
+  This is a second default exercise.
+\end{exercise}
+\begin{solution}[print=true]
+  This is the default solution to the second exercise.
+  We are printing the solution this time.
+\end{solution}
+\end{myBlock}
+
+
+You can see here that the numbering is consistent in the sense that the first time we called \verb'\begin{exercise}' we got problem \#1 and the second time that we call \verb'\begin{exercise}', then we get problem \#2.
+The counter that goes with the \texttt{exercises} environment is the \texttt{counter} ``property'' of the exercise environment that you can reference using \verb'\theexercise':
+
+\begin{myBlock}
+\begin{verbatim}
+  The current exercise counter is~\theexercise.
+\end{verbatim}
+\end{myBlock}
+
+\begin{myBlock}
+  The current exercise counter is~\theexercise.
+\end{myBlock}
+
+What we really want to be able to do is to define our own ``exercise-like'' environments, in particular, a \emph{multiple choice} environment.
+
+On second thought, maybe we don't have to reinvent the wheel here.
+It is possible to add new properties to an exercise environment using the \verb'\DeclareExerciseProperty' command.  Maybe we can use that... 
+
+
+\end{document}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\question
+Simplify $\lim_{x\to 18}\sqrt{5}$.
+\vspacer
+
+\begin{oneparchoices}
+  \CorrectChoiceEmphasis{\large\bfseries\boldmath}
+      \CorrectChoice $\sqrt{5}$ %\correct
+      \choice $5$
+      \choice $18\sqrt{5}$
+      \choice $18$
+      \choice None of these
+\end{oneparchoices}
+
+%\begin{solution}
+%\end{solution}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

@@ -1,5 +1,5 @@
 \documentclass{article}
-\usepackage{xsim}
+\usepackage[clear-aux]{xsim}
 
 %%%%%%%%%%%%%%% MATH PACKAGES %%%%%%%%%%%%%%%
 \usepackage{amsmath}      % math papers (\text}
@@ -20,13 +20,13 @@
 \begin{document}
 
 % DIRECTLY PRINTING AN EXERCISE
-\begin{exercise}[use,print]
+\begin{exercise}[print]
   This is an exercise that is ``outside'' of any collection.
   The \texttt{[use,print]} options mean the exercise will be enumerated and printed no matter what other specifications are made.
-  
+
   Just using the option \texttt{[use]} will result in the exercise being enumerated, but \textbf{not} printed.
   (In other words, the quadratic problem below will be enumerated as \#2 even though the quadratic problem might be the first problem that actually gets printed.)
-   
+
   Just using the option \texttt{[print]} will print the problem, but will not
   enumerate it.
 \end{exercise}
